@@ -9,11 +9,6 @@ RVector::RVector(const int &n) : n(n), t(n>0? new double[n] : NULL) {}
 RVector::RVector(const int &n,const double &x) : n(n), t(n>0 ? new double[n] : NULL) { for (int i=0 ; i<n ; i++) t[i] = x; }
 RVector::RVector(const RVector &v) : n(v.n), t(n>0 ? new double[n] : NULL) { for (int i=0 ; i<n ; i++) t[i] = v.t[i]; }
 
-IVector::IVector() : n(0), t(NULL) {}
-IVector::IVector(const int &n) : n(n), t(n>0? new int[n] : NULL) {}
-IVector::IVector(const int &n,const int &x) : n(n), t(n>0 ? new int[n] : NULL) { for (int i=0 ; i<n ; i++) t[i] = x; }
-IVector::IVector(const IVector &v) : n(v.n), t(n>0 ? new int[n] : NULL) { for (int i=0 ; i<n ; i++) t[i] = v.t[i]; }
-
 RMatrix::RMatrix() : n(0), m(0), t(NULL) {}
 
 RMatrix::RMatrix(const int &nn, const int &mm) : n(nn), m(mm), t(nn>0 ? new double*[nn] : NULL) {
@@ -42,8 +37,6 @@ RMatrix::RMatrix(const RMatrix &M) : n(M.n), m(M.m), t(n>0 ? new double*[n] : NU
 
 RVector::~RVector() { if(t!=NULL) delete[] (t); }
 
-IVector::~IVector() { if(t!=NULL) delete[] (t); }
-
 RMatrix::~RMatrix() {
   if (t != NULL) {
     delete[] (t[0]);
@@ -61,18 +54,6 @@ RVector& RVector::operator=(const RVector &v) {
       if (t !=	NULL) delete [] (t);
       n = v.n;
       t = n>0 ? new double[n] : NULL;
-    }
-    for (int i=0 ; i<n ; i++) t[i] = v.t[i];
-  }
-  return *this;
-}
-
-IVector& IVector::operator=(const IVector &v) {
-  if (this != &v) {
-    if (n != v.n) {
-      if (t !=	NULL) delete [] (t);
-      n = v.n;
-      t = n>0 ? new int[n] : NULL;
     }
     for (int i=0 ; i<n ; i++) t[i] = v.t[i];
   }

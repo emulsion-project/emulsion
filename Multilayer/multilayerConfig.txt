@@ -1,0 +1,30 @@
+NbrMediums
+1
+Zi
+0
+Materials
+1
+
+NbrMediums
+3
+Zi
+-120e-9	60e-9
+Materials
+18	17	1
+
+NbrMediums
+4
+Zi
+-120e-9	0	60e-9
+Materials
+18	17	2	1
+
+NbrMediums
+1
+Zi
+0
+Materials
+1
+
+
+

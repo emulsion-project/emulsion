@@ -1,0 +1,4 @@
+Initial_Energy(eV)_EnergyLoss
+80e3	1.72
+Impact_Parameter_x_y
+76e-9	0	500e-3

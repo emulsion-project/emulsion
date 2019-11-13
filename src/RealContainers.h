@@ -22,21 +22,6 @@ public:
   double *t;
 };
 
-class IVector
-{
-public:
-  IVector();
-  IVector(const int &n);
-  IVector(const int &n,const int &x);
-  IVector(const IVector &v);
-  ~IVector();
-  void resize(const int &m);
-  void assign(const int &m,const int &x);
-  IVector& operator=(const IVector &v);
-  int n;
-  int *t;
-};
-
 class RMatrix
 {
 public:

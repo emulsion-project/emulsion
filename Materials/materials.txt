@@ -1,0 +1,18 @@
+0	1.33	0
+0	2.2	0
+3	8.98889	0.017595	0	1.39e6	Materials/khiInterAg1.txt
+2	9.01	0.072
+2	15	1.06
+2	9.073	0.071
+1	Materials/ag_palik.txt
+1	Materials/si_palik.txt
+1	Materials/si_sopra.txt
+1	Materials/au_JC.txt
+3	9.0195168	0.070884358	0	1.4e6	Materials/khiInterAu1.txt
+1	Materials/au_palik.txt
+1	Materials/pt_palik.txt
+1	Materials/al_rakic.txt
+1	Materials/TiO2_rutile_o.txt
+1	Materials/cu_JC.txt
+0	1.6	0
+0	1.5	0

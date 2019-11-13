@@ -1,0 +1,29 @@
+Dans le fichier "incidence.txt" : 
+
+0	Incidence/planeWave.txt
+1	Incidence/Electron.txt
+
+pour chaque ligne, un chiffre indiquant la nature de l'excitation incidente (0 : onde plane, 1 : électron)
+suivi du fichier contenant les paramètres d'excitation.
+
+
+Dans le fichier "planeWave.txt" :
+
+Angles définissant la direction de l'onde plane incidente (beta0=theta, alpha0=phi)
+beta0(°) 
+0
+alpha0(°) 
+0
+
+Amplitudes complexes (partie réelle puis imaginaire) du champ électrique
+Eb (composante parellèle au plan d'incidence)
+1	0
+Ea (composante perpendiculaire au plan d'incidence)
+0	0
+
+Dans le fichier "Electron.txt" :
+
+Initial_Energy(eV)_EnergyLoss (Energie en eV du faisceau incident, puis perte d'énergie eV à considérer)
+50e3	3
+Impact_Parameter_x_y_z0 (la position initiale des électrons est donné par z0, ils se dirigent parallèlement à l'axe z à x et y constants. x, y, et z0 sont donnés en mètre)
+111e-9	0	1

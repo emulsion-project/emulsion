@@ -344,6 +344,42 @@ bool invGaussj(Matrix &a) {
   return true;
 }
 
+Matrix invCholesky(Matrix &A) {
+  Complex C;
+  int i,j,k;
+  Matrix inv(A.n,A.n,0.);
+  for (i=0 ; i<A.n ; i++) {
+    for (j=i ; j<A.n ; j++) {
+      C = A.t[i][j];
+      for (k=i-1 ; k>=0 ; k--) C -= conj(A.t[i][k])*(A.t[j][k]);
+      if (i == j) {
+        A.t[i][i] = sqrt(C);
+        if (C.im!=0.) cout << "fail" << endl;
+      }
+
+      else A.t[j][i] = C/A.t[i][i];
+    }
+  }
+  for (i=0 ; i<A.n ; i++) for (j=0 ; j<i ; j++) A.t[j][i] = 0.;
+
+  for (i=0 ; i<A.n ; i++) {
+    for (j=0 ; j<=i ; j++) {
+      C = (i==j ? 1. : 0.);
+      for (k=i-1;k>=j;k--) C -= (A.t[i][k])*inv.t[j][k];
+      inv.t[j][i]= C/A.t[i][i];
+    }
+  }
+  for (i=A.n-1 ; i>=0 ; i--) {
+    for (j=0 ; j<=i ; j++) {
+      C = (i<j? 0. : inv.t[j][i]);
+      for (k=i+1 ; k<A.n ; k++) C -= conj(A.t[k][i])*inv.t[j][k];
+      inv.t[j][i] = C/A.t[i][i];
+      inv.t[i][j] = conj(inv.t[j][i]);
+    }
+  }
+  return inv;
+}
+
 void hessenberg(Matrix &A) {
   int n = A.m, i, j, k, piv=0;
   Complex max = 0., ri;
@@ -739,5 +775,11 @@ Vector polyFit(const Matrix &XY, const int &n) {
 Matrix transpose(const Matrix &M) {
   Matrix A(M.n,M.m);
   for (int i=0 ; i<M.n ; i++) for (int j=0 ; j<M.m ; j++) A.t[i][j] = M.t[j][i];
+  return A;
+}
+
+Matrix transposeConj(const Matrix &M) {
+  Matrix A(M.n,M.m);
+  for (int i=0 ; i<M.n ; i++) for (int j=0 ; j<M.m ; j++) A.t[i][j] = conj(M.t[j][i]);
   return A;
 }

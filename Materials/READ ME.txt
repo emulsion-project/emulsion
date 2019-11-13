@@ -1,0 +1,32 @@
+Structure du fichier "materials.txt" : 
+
+0	1	0
+0	1.5	0
+3	8.98889	0.017595	1.	1.39e6	Materials/khiInterAg1.txt
+2	8.98889	0.017595
+2	9.073	0.071
+1	Materials/ag_palik.txt
+1	Materials/si_palik.txt
+1	Materials/si_sopra.txt
+1	Materials/au_JC.txt
+1	Materials/au_palik.txt
+
+
+Chaque ligne correspond à un matériau
+Le premier chiffre de chaque ligne indique la méthode de calcul de l'indice de réfraction :
+- 0 : indice constant
+- 1 : indice tabulé
+- 2 : modèle de Drude
+- 3 : modèle de Drude modifié
+
+Dans le cas d'un indice constant, la partie réelle et imaginaire de l'indice de réfraction sont indiqués
+
+Dans le cas d'un indice tabulé, le fichier contenant les valeurs d'indice en fonction de la longueur d'onde est donné
+
+Dans le cas du modèle de Drude, la pulsation plasma wp et la constante de relaxation gamma sont donnés en eV
+
+Dans le cas du modèle de drude modifié, la constante de relaxation s'écrit gamma = gamma0 + A*vf/r.
+La pulsation plasma wp et la constante de relaxation gamma sont donnés en eV, puis la constant multiplicative A et la vitesse de Fermi en m/s.
+Enfin la contribution interbande est ajouté, dont les valeurs sont tabulées dans le fichier indiqué.
+
+ 

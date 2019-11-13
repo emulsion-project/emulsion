@@ -11,16 +11,20 @@ class Multilayer
 {
 public:
   Multilayer();
-  Multilayer(const int &nbrMed, const RVector &positions, const IVector &meds, const double &lambd);
-  void setParameters(const int &nbrMed, const RVector &positions, const IVector &meds, const double &lambd);
+  Multilayer(const string &fname, const double &lambd);
+  void setParameters(const string &fname, const double &lambd);
+  void setSourceExt(const Complex &e0, const Complex &beta, const double &alpha);
+  Vector setSourceInt(const int &pol, const Complex &aP, const Complex &aM, const Complex &betaP, const double &alphaP, const double &z);
+  Vector calcSourceAmplIn(const double &z, const int &pol);
+  Vector calcIncAmplOut(const int &pol);
+  Vector calcIncAmplIn(const double &z, const int &pol);
+  Vector setSourceIntAmpl(const int &pol, const Complex &aP, const Complex &aM, const Complex &betaP, const double &alphaP, const double &zs, const Vector3d &pos);
+  Vector3d setSourceIntFields(const int &pol, const Complex &aP, const Complex &aM, const Complex &betaP, const double &alphaP, const double &zs, const Vector3d &pos);
+  Vector3d sourceExtFields(const Complex &e0, const Complex &beta, const double &alpha,const int &pol, const Vector3d &pos);
+  Vector sourceExtAmpl(const Complex &e0, const Complex &beta, const double &alpha,const int &pol, const Vector3d &pos);
   void setLambda (const double &lambd);
-  void setKxy(const Complex &k);
+  Complex getAngle(const int &l1, const Complex &beta1, const double &alpha1, const int &l2);
   int getMedium(const double &z);
-
-  Vector sourceExtOut(const Vector &a, const int &pol);
-  Vector sourceExtIn(const Vector &a, const int &pol, const double &z);
-  Vector sourceInt(const int &pol, const Vector &a, const double &zs, const double &z);
-
   Matrix calcSMatrix(const int &pol);
   Matrix calcSMatrixU(const int &pol, const double &z);
   Matrix calcSMatrixL(const int &pol, const double &z);
@@ -31,11 +35,12 @@ public:
   Vector calcFresnelCoefsTE(const int &i, const int &j);
   Complex calcKz(const int &lay, const bool &dirP);
   int nbrMediums;
-  IVector mediums;
+  int *mediums;
   RVector Zi;
   Vector ni,ki,a0,aSa,aSb,aSPMa,aSPMb,a,aS;
-  double lambda;
-  Complex kxy,kz,Kzi,Kzj;
+  double lambda,alpha0;
+  Complex beta0;
+  Complex kx,ky,kz,Kzi,Kzj;
   //Matrix Sb,Sa,Sz,S;
   //Complex Ebout,Eaout;
   RefractiveIndex *ri;

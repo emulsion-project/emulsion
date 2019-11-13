@@ -5,7 +5,7 @@ using namespace std;
 RefractiveIndex::RefractiveIndex() {}
 
 RefractiveIndex::RefractiveIndex(const int &mat,const double &r) {
-  ifstream ifs("materials.txt");
+  ifstream ifs("Materials/materials.txt");
   material = mat;
   R = r;
   int i=1;
@@ -26,7 +26,7 @@ RefractiveIndex::RefractiveIndex(const int &mat,const double &r) {
 }
 
 void RefractiveIndex::setMaterial(const int &mat,const double &r) {
-  ifstream ifs("materials.txt");
+  ifstream ifs("Materials/materials.txt");
   material = mat;
   R = r;
   int i=1;

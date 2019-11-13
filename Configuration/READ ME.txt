@@ -1,0 +1,47 @@
+N (ordre maximal utilisé pour les calculs)
+8 
+Ng (nombre de points d'intégration pour le calcul de la matrice T des particules non-sphériques)
+50 
+MethodTMatrix_0LS_1DS (méthode utilisée pour le calcul de la matrice T des particules non-sphériques)
+0 
+Solver_0Direct_1GMRES (méthode de résolution du systéme linéaire multi-particules, GMREs (1) plus rapide)
+1
+Incidence (ligne à considérer dans le fichier définissant les incidences)
+1
+Lambda (longueur d'onde en mètres)
+455e-9
+Surrounding_medium_material (ligne à considérer pour le milieu ambiant dans le fichier définissant les matériaux)
+1
+Center (centre du système de coordonnées global)
+0	0	0
+Nbr_Part (nombre de particules à considérer)
+15
+Periodic_system (non actif pour l'instant)
+0
+Npx_Npy_Npz (non actif pour l'instant)
+4	4	1
+dx_dy_dz (non actif pour l'instant)
+50e-9	50e-9	0
+Material_Type_x_y_z_r (définition du système, voir explications ci-dessous)
+3	0	-100e-9	-50e-9	0	20e-9
+3	0	-50e-9	-50e-9	0	20e-9
+3	0	0	-50e-9	0	20e-9
+3	0	50e-9	-50e-9	0	20e-9
+3	0	100e-9	-50e-9	0	20e-9
+3	0	-90e-9	0	0	20e-9
+3	0	-45e-9	0	0	20e-9
+3	0	0	0	0	20e-9
+3	0	45e-9	0	0	20e-9
+3	0	90e-9	0	0	20e-9
+3	0	-100e-9	50e-9	0	20e-9
+3	0	-50e-9	50e-9	0	20e-9
+3	0	0	50e-9	0	20e-9
+3	0	50e-9	50e-9	0	20e-9
+3	0	100e-9	50e-9	0	20e-9
+
+Chaque ligne correspond à une particule. Le nombre de ligne doit être supérieur ou égal au nombre de particules défini plus haut.
+Paramètres : 
+- Material : ligne à considérer dans le fichier définissant les matériaux
+- Type : géométrie de la particule : 0 = sphère, 1 = sphéroïde, 2 = cylindre
+- x, y, z (en mètre) : position en coordonnées cartésiennes de la particule
+- r : rayon(s) de la particule :  pour une sphère indiquer seulement son rayon, pour les sphéroïdes et cylindres indiquer leur rayon Ra et Rb (Ra selon l'axe de symétrie) 

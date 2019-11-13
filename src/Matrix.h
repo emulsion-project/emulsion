@@ -52,6 +52,7 @@ Complex max(const Matrix &M);
 bool gaussj(Matrix &a, Matrix &b);
 bool gaussj(Matrix &a,Vector &b);
 bool invGaussj(Matrix &a);
+Matrix invCholesky(Matrix &A);
 void hessenberg(Matrix &A);
 void qr(Matrix &A);
 Vector roots(const Vector &AA);
@@ -65,5 +66,6 @@ Vector gmres(const Vector &B, const Matrix &A, const double &tol);
 Matrix gmres(const Matrix &B, const Matrix &A, const double &tol);
 Vector polyFit(const Matrix &XY, const int &n);
 Matrix transpose(const Matrix &M);
+Matrix transposeConj(const Matrix &M);
 
 #endif // MATRIX_H_INCLUDED

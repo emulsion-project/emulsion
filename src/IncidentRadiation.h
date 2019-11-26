@@ -8,28 +8,28 @@
 #include "Multilayer1.h"
 #include <fstream>
 
-class IncidentRadiation
-{
+class IncidentRadiation {
 public:
-  IncidentRadiation();
-  IncidentRadiation(const int &inc, const double &lambd);
-  void setParameters(const int &inc, const double &lambd);
-  void setPlaneWaveCoeffs(const int &n, const Vector3d &pos);
-  void setElectron(const int &n, const double &E0, const double &E, const double &x, const double &y);
+	IncidentRadiation();
+	IncidentRadiation(const int &inc, const double &lambd);
+	void setParameters(const int &inc, const double &lambd);
+	void setPlaneWaveCoeffs(const int &n, const Vector3d &pos);
+	void setElectron(const int &n, const double &E0, const double &E,
+			const double &x, const double &y);
 
-  int N,type,incidence;
-  Multilayer1 ml;
-  // plane wave
-  double beta0,alpha0,sinb0;
-  Complex Eb, Ea, cosb0;
-  // electron
-  double E0,E,v0,omega,gamma;
-  double x0,y0,z0,b,phi0;
-  double lambda;
-  Vector aincs,aincp,aouts,aoutp,ap,as;
+	int N, type, incidence;
+	Multilayer1 ml;
+	// plane wave
+	double beta0, alpha0, sinb0;
+	Complex Eb, Ea, cosb0;
+	// electron
+	double E0, E, v0, omega, gamma;
+	double x0, y0, z0, b, phi0;
+	double lambda;
+	Vector aincs, aincp, aouts, aoutp, ap, as;
 
-  Vector Amn,AmnR,AmnT;
-  string fileName;
+	Vector Amn, AmnR, AmnT;
+	string fileName;
 };
 
 #endif // INCIDENTRADIATION_H_INCLUDED

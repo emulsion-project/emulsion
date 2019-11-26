@@ -1,2 +1,2 @@
 # emulsion
-Electromagnetic multiple scattering simulation
+Electromagnetic MULtiple Scattering simulatION

@@ -4,26 +4,25 @@
 #include <ostream>
 #include "Utils.h"
 
-class Complex
-{
+class Complex {
 public:
-  Complex(void);
-  Complex(const double &x);
-  Complex(const Complex &z);
-  Complex(const double &a, const double &b);
-  double real() const;
-  double imag() const;
-  Complex& operator=(const Complex &z);
-  Complex& operator=(const double &x);
-  Complex& operator+=(const Complex &z);
-  Complex& operator+=(const double &x);
-  Complex& operator-=(const Complex &z);
-  Complex& operator-=(const double &x);
-  Complex& operator*=(const Complex &z);
-  Complex& operator*=(const double &x);
-  Complex& operator/=(const Complex &z);
-  Complex& operator/=(const double &x);
-  double re,im;
+	Complex(void);
+	Complex(const double &x);
+	Complex(const Complex &z);
+	Complex(const double &a, const double &b);
+	double real() const;
+	double imag() const;
+	Complex& operator=(const Complex &z);
+	Complex& operator=(const double &x);
+	Complex& operator+=(const Complex &z);
+	Complex& operator+=(const double &x);
+	Complex& operator-=(const Complex &z);
+	Complex& operator-=(const double &x);
+	Complex& operator*=(const Complex &z);
+	Complex& operator*=(const double &x);
+	Complex& operator/=(const Complex &z);
+	Complex& operator/=(const double &x);
+	double re, im;
 };
 
 /*********************************
@@ -80,8 +79,8 @@ bool operator>=(const Complex &z1, const Complex &z2);
  *        Definition of i,j      *
  *********************************/
 
-static const Complex i_(0.,1.);
-static const Complex j_(0.,1.);
+static const Complex i_(0., 1.);
+static const Complex j_(0., 1.);
 
 /*********************************
  *      Related functions        *
@@ -131,6 +130,6 @@ void swap(Complex &a, Complex &b);
  *      Stream operators         *
  *********************************/
 
-std::ostream &operator<<(std::ostream &out, const Complex &z);
+std::ostream& operator<<(std::ostream &out, const Complex &z);
 
 #endif // COMPLEX_H_INCLUDED
